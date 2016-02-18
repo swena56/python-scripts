@@ -1,13 +1,13 @@
-import socket               # Import socket module
+#from socket import *               # Import socket module
+import socket
 
+s = socket.socket(
+    socket.AF_INET, socket.SOCK_STREAM)
+host = '127.0.0.1'
+port = 6000               # Reserve a port for your service.
 
-
-s = socket.socket ()
-host = socket.gethostname() # Get local machine name
-#host = '127.0.0.1'
-port = 12345                # Reserve a port for your service.
 s.bind((host, port))        # Bind to the port
-
+# # Get local machine name
 s.listen(5)                 # Now wait for client connection.
 while True:
    c, addr = s.accept()     # Establish connection with client.

@@ -16,9 +16,9 @@ def routing_function():
 	print "running function"
 
 peerid = "0"
-host = "127.0.0.1"
+host = "0.0.0.0"
 serverHost = "10.0.0.14"
-port = "5668"
+port = "62"
 maxconnections = "5"
 
 #create socket for localmachine
