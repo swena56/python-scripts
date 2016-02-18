@@ -17,7 +17,7 @@ def routing_function():
 
 peerid = "0"
 host = "0.0.0.0"
-serverHost = "10.0.0.14"
+serverHost = ""
 port = "62"
 maxconnections = "5"
 

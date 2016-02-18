@@ -1,9 +1,0 @@
-Starting a webserver is as easy as 
-python -m SimpleHTTPServer
-# open firewall port for the webserver
-https://github.com/moxie0/knockknock
-http://cs.berry.edu/~nhamid/p2p/framework-python.html
-http://cs.berry.edu/~nhamid/p2p/btpeer.py
-
-peer guid's
-peer routing table

@@ -1,9 +1,0 @@
-"""
-enviroment python 2.7.11
-http://aka.ms/vcpython27
-# install Microsoft Visual C++ Compiler for Python 2.7
-https://www.microsoft.com/en-us/download/confirmation.aspx?id=44266
-#install Twisted 
-python setup.py install
-"""
-
