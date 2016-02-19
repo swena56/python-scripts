@@ -40,6 +40,27 @@ class ClientThread(Thread):
             print "received data:", data
             conn.send(data)  # echo
 
+class Listen(Thread):
+
+    listen = True
+    
+    def __init__(self,socket):
+        Thread.__init__(self)
+        #print needs a socket as a parameter if number of parameters is 2
+        self.socket = socket
+
+    def run(self):
+        print "listening socket on...localhost"
+        while listen == True:
+            (conn, (ip,port)) = socket.accept()
+            newthread = ClientThread(ip,port)
+            newthread.start()
+            threads.append(newthread)
+
+    def stop():
+        listen = False
+    
+
 #--------------------------
 
 
@@ -56,18 +77,20 @@ def connect():
         return
 
 #global variables
-serverHost = '104.236.51.232'
 threads = []
-
-running = True
-
+print "\nInitializating..."
+serverHost = '104.236.51.232'; print "server host: "+serverHost
 peer_me = BTPeer(5,62,5,serverHost)
 socket = peer_me.makeserversocket(62)
 
+listen = Listen(socket)
+listen.start()
+running = True
+
 #main loop
 while running == True:
-        #os.system('cls')
-        print "\n------------------Menu-------------------"
+        #os.system('cls')       
+        print "\n\n------------------Menu-------------------"
         print "Listening socket: "
         print "-----------------------------------------"
         print "1)Connect"

@@ -1,3 +1,6 @@
 http://cs.berry.edu/~nhamid/p2p/framework-python.html
 
 
+windows host file
+notepad c:\windows\system32\drivers\etc\hosts
+docker.me X.X.X.X
