@@ -1,2 +1,36 @@
 #soap notes
 https://pypi.python.org/pypi/SOAPpy#quick-start
+
+####UPNP####
+mapping services with SSDP
+
+
+#Install for linux
+sudo apt-get install python-soappy
+
+Questions
+How do I map a port using UPnp and SOAP?
+What can I use soap_web_services for?
+How do I install soappy?
+How does a SOAP service work?
+What other web services are there for python? WSDL?
+How is WSDL work?
+
+How does RootDevice work with UPnP?
+https://developer.gnome.org/gupnp/unstable/GUPnPRootDevice.html#gupnp-root-device-new
+
+What does this do?
+import os
+from SOAPpy import *
+endpoint = "http://10.0.0.138/upnp/control/wanpppcpppoa"
+namespace = "urn:schemas-upnp-org:service:WANPPPConnection:1"
+server = SOAPProxy(endpoint, namespace)
+soapaction2 = "urn:schemas-upnp-org:service:WANPPPConnection
+:1#AddPortMapping"
+server._sa(soapaction2).AddPortMapping(NewRemoteHost="",
+NewExternalPort=5667, NewProtocol="TCP",
+NewInternalPort=22, NewInternalClient="10.0.0.152",
+NewEnabled=1,
+NewPortMappingDescription="SSH forward",
+NewLeaseDuration=0)
+#
