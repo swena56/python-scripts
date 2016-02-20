@@ -1,0 +1,17 @@
+How to create a sqlite3 database
+
+extract sqlite executable
+
+found out I can not name a file sqlite3.py or I will run in to problems
+
+<cmd.exe>
+sqlite3 databaseName.db
+
+.tables  #shows tables
+.exit
+
+import sqlite3 as lite
+con = None
+con = lite.connect('databaseName.db')
+cur = con.cursor()    
+cur.execute('SELECT SQLITE_VERSION()')

@@ -4,9 +4,16 @@ import SocketServer
 from btpeer import *
 
 class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
+    
+    def checkDatabase(self):       
+        return
 
+    def addPeer(self):
+        return
+    
     def handle(self):
         data = self.request.recv(1024)
+        print data
         cur_thread = threading.current_thread()
         response = "{}: {}".format(cur_thread.name, data)
         self.request.sendall(response)
@@ -70,7 +77,7 @@ if __name__ == "__main__":
                 if True:
                     client(connectTo,port,"message")
         if input is "2":
-                showPeers()
+                print server.getMessages()
         if input is "9":
                 running = False
 
